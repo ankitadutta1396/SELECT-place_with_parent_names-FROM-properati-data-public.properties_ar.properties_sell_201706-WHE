@@ -1,0 +1,32 @@
+#standardSQL
+SELECT *
+FROM `properati-data-public.properties_ar.properties_sell_201706`
+LIMIT 1000
+
+SELECT place_name
+FROM `properati-data-public.properties_ar.properties_sell_201706`
+WHERE  place_name= "Jujuy"
+RESULT: 1
+
+SELECT country_name
+FROM `properati-data-public.properties_ar.properties_sell_201706`
+WHERE  country_name= "Argentina"
+RESULT:100
+
+SELECT place_with_parent_names
+FROM `properati-data-public.properties_ar.properties_sell_201706`
+WHERE  place_with_parent_names= "|Argentina|Mendoza|"
+RESULT:100
+
+SELECT count(distinct(property_type)) FROM `properati-data-public.properties_ar.properties_sell_201706`
+RESULT: 40
+
+SELECT property_type 
+FROM `properati-data-public.properties_ar.properties_sell_201706`
+WHERE property_type="apartment"
+RESULT 100
+
+SELECT * FROM `properati-data-public.properties_ar.properties_sell_201706`
+WHERE place_name	 LIKE "%Mendoza%" AND
+property_type	 = "house"
+RESULT:01
